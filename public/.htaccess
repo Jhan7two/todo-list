@@ -1,0 +1,11 @@
+# Habilitar el motor de reescritura
+RewriteEngine On
+
+# Si la solicitud no es para un archivo existente
+RewriteCond %{REQUEST_FILENAME} !-f
+# Si la solicitud no es para un directorio existente
+RewriteCond %{REQUEST_FILENAME} !-d
+# Si la solicitud no es para un enlace simbólico
+RewriteCond %{REQUEST_FILENAME} !-l
+# Redirigir todas las demás solicitudes a index.php
+RewriteRule ^ index.php [QSA,L]

@@ -1,0 +1,118 @@
+/* Estilos personalizados para la aplicación de tareas */
+
+/* Estilo para el contenedor principal */
+.todo-container {
+    max-width: 800px;
+    margin: 2rem auto;
+}
+
+/* Estilo para las tarjetas de tareas */
+.task-card {
+    transition: transform 0.2s ease-in-out;
+    margin-bottom: 1rem;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.task-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Estilo para tareas completadas */
+.task-completed {
+    background-color: #f8f9fa;
+}
+
+.task-completed .form-check-label {
+    text-decoration: line-through;
+    color: #6c757d;
+}
+
+/* Estilo para el formulario de tareas */
+#todo-form {
+    background-color: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Estilo para los botones de acción */
+.btn-action {
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+.btn-action:hover {
+    opacity: 1;
+}
+
+/* Estilo para el contador de tareas */
+.task-count {
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+/* Estilo para el mensaje de no hay tareas */
+.no-tasks {
+    padding: 2rem;
+    text-align: center;
+    color: #6c757d;
+}
+
+/* Estilo para los botones de filtro */
+.filter-btn.active {
+    font-weight: 600;
+    background-color: #0d6efd;
+    color: white;
+}
+
+/* Ajustes para móviles */
+@media (max-width: 576px) {
+    .btn-group {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+    
+    .btn-group .btn {
+        flex: 1;
+    }
+    
+    .todo-actions {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
+
+/* Efecto de carga */
+.loading {
+    position: relative;
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+.loading:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.7);
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Animación de fade in para nuevas tareas */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.task-card {
+    animation: fadeIn 0.3s ease-out forwards;
+}
